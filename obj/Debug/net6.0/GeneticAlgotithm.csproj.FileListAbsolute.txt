@@ -1,0 +1,15 @@
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/bin/Debug/net6.0/GeneticAlgotithm
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/bin/Debug/net6.0/GeneticAlgotithm.deps.json
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/bin/Debug/net6.0/GeneticAlgotithm.runtimeconfig.json
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/bin/Debug/net6.0/GeneticAlgotithm.dll
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/bin/Debug/net6.0/GeneticAlgotithm.pdb
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.csproj.AssemblyReference.cache
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.AssemblyInfoInputs.cache
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.AssemblyInfo.cs
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.csproj.CoreCompileInputs.cache
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.dll
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/refint/GeneticAlgotithm.dll
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.pdb
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/GeneticAlgotithm.genruntimeconfig.cache
+/Users/eduardo/Desktop/Estudo/GeneticAlgotithm/obj/Debug/net6.0/ref/GeneticAlgotithm.dll
