@@ -4,7 +4,7 @@ namespace GeneticAlgorithm
     {
         private int[] _chromosome;
         private double _fitness;
-        public int _indexOfVector = 0;
+        private int _indexOfVector = 0;
 
         public Individual() 
         {
@@ -17,6 +17,16 @@ namespace GeneticAlgorithm
             }
 
             CalcFitness();
+        }
+        public int IndexOfVector
+        { 
+            get {return _indexOfVector;}
+            set {_indexOfVector = value;}
+        }
+
+        public double Fitness { 
+            get {return _fitness;} 
+            set {_fitness = value;} 
         }
         public void Evaluate()
         {

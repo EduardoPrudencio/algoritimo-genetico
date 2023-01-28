@@ -13,7 +13,7 @@ namespace GeneticAlgorithm
         private static Mutation _mutationType = Mutation.NewIndividuo;
 
         public static int SizeChomosome { get {return _sizeChomosome;} set {_sizeChomosome = value;} }
-        public static int SizePopilation { get => _sizePopilation;}
+        public static int SizePopilation { get { return _sizePopilation;} set { _sizePopilation = value;}}
         public static Random Random { get => _rand;}
         public static bool Elitism { get => _elitism; }
         public static int SizeElitism { get => _sizeElitism;}

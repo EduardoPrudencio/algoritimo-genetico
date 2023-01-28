@@ -22,4 +22,10 @@ Individual ind = new();
 Console.WriteLine("\nExibindo individuo");
 Console.WriteLine(ind);
 
+ConfigurationGA.SizePopilation = 5;
+
+Console.WriteLine("\nExibindo população\n");
+Population pop = new Population();
+Console.WriteLine(pop.ToString());
+
 Console.WriteLine(".");
