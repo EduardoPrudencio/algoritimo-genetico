@@ -21,9 +21,86 @@ namespace GeneticAlgorithm
 
         public Population ExecuteGA(Population population)
         {
-            return null;
-        }
+            Population newPopulation = new Population();
+            List<Individual> populationTemp = new List<Individual>();
 
+            for (int i = 0; i < ConfigurationGA.SizePopilation; i++)
+            {
+                populationTemp.Add(population.GetPopulation()[i]);
+            }
+
+            Individual[] individualsElit = new Individual[ConfigurationGA.SizeElitism];
+
+            if(ConfigurationGA.Elitism)
+            {
+                population.OrderPopulation();
+
+                for (int i = 0; i < ConfigurationGA.SizeElitism; i++)
+                {
+                    individualsElit[i] = population.GetPopulation()[i];
+                }
+            }
+
+            for (int i = 0; i < (ConfigurationGA.SizePopilation /2); i++)
+            {
+                Individual fatherOne = _selection(population);
+                Individual fatherTwo = _selection(population);
+
+                double randomCross = ConfigurationGA.Random.NextDouble();
+               
+                if(randomCross <= _rateCrossover)
+                {   
+                   Individual[] children = _crossover(fatherOne, fatherTwo);
+
+                   if(ConfigurationGA.MutationType == GeneticAlgorithm.Mutation.NewIndividuo)
+                   {
+                    children[0] = Mutation(children[0]);
+                    children[1] = Mutation(children[1]);
+                   } 
+
+                   children[0].IndexOfVector = fatherOne.IndexOfVector;
+                   children[1].IndexOfVector = fatherTwo.IndexOfVector;
+
+                   populationTemp[fatherOne.IndexOfVector] = children[0];
+                   populationTemp[fatherTwo.IndexOfVector] = children[1];
+                }
+                else 
+                {
+                   populationTemp[fatherOne.IndexOfVector] = fatherOne;
+                   populationTemp[fatherTwo.IndexOfVector] = fatherTwo;
+                }
+            }
+
+            for (int i = 0; i < ConfigurationGA.SizePopilation; i++)
+            {
+                newPopulation.SetIndividual(i, populationTemp[i]);
+            }
+
+            populationTemp = null;
+
+            if(ConfigurationGA.MutationType == GeneticAlgorithm.Mutation.InPopulation)
+            {
+                newPopulation = Mutation(newPopulation);
+            }
+
+            if(ConfigurationGA.Elitism)
+            {
+                newPopulation.Evaluate();
+                newPopulation.OrderPopulation();
+
+                int startPoint = ConfigurationGA.SizePopilation - ConfigurationGA.SizeElitism;
+                int count = 0;
+
+                for (int i = startPoint; i < ConfigurationGA.SizePopilation; i++)
+                {
+                    newPopulation.SetIndividual(i, individualsElit[count]);
+                    count++;
+                }
+            }
+
+            newPopulation.Evaluate();
+            return newPopulation;
+        }
         public Individual[] CrossoverPMX(Individual fatherOne, Individual fatherTwo)
         {
             Individual[] newIdividual = new Individual[2];
