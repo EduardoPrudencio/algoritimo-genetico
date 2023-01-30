@@ -10,22 +10,20 @@ Console.WriteLine($"Exibindo a distância entre {TablePoints.Count()} pontos.\n"
 Console.WriteLine(TablePoints.Print());
 Console.WriteLine(Environment.NewLine);
 
-Console.WriteLine("Criando população\n");
+ConfigurationGA.SizePopilation = 10;
+ConfigurationGA.NumberOfCompetitors = 3;
 
-foreach (var item in Utils.RandomNumbers(0, 10))
-{
-    Console.Write($"{item} ");
-}
+Individual individualOne = new Individual();
+Individual individualTwo = new Individual();
 
-Individual ind = new();
+GenetcAlgorithm GA = new GenetcAlgorithm();
+Individual[] newList = new Individual[2];
 
-Console.WriteLine("\nExibindo individuo");
-Console.WriteLine(ind);
+Console.WriteLine(individualOne);
+Console.WriteLine(individualTwo);
 
-ConfigurationGA.SizePopilation = 5;
+newList = GA.CrossoverPMX(individualOne, individualTwo);
 
-Console.WriteLine("\nExibindo população\n");
-Population pop = new Population();
-Console.WriteLine(pop.ToString());
-
+Console.WriteLine(newList[0]);
+Console.WriteLine(newList[1]);
 Console.WriteLine(".");

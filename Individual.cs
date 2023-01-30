@@ -23,7 +23,6 @@ namespace GeneticAlgorithm
             get {return _indexOfVector;}
             set {_indexOfVector = value;}
         }
-
         public double Fitness { 
             get {return _fitness;} 
             set {_fitness = value;} 

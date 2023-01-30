@@ -19,7 +19,7 @@ namespace GeneticAlgorithm
         public static int SizeElitism { get => _sizeElitism;}
         public static double RateCrossover { get => _rateCrossover;}
         public static double RateMutation { get => _rateMutation;}
-        public static int NumberOfCompetitors { get => _numberOfCompetitors;}
+        public static int NumberOfCompetitors { get => _numberOfCompetitors; set{_numberOfCompetitors = value;}}
         public static Mutation MutationType { get => _mutationType;}
     }
 
