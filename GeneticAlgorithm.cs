@@ -1,6 +1,6 @@
 namespace GeneticAlgorithm
 {
-    public class GenetcAlgorithm
+    public class GenetcAlgorithmMain
     {
         public delegate Individual[] Crossover(Individual fatherOne, Individual fatherTwo);
         public delegate Individual Selection(Population population);
@@ -10,14 +10,14 @@ namespace GeneticAlgorithm
         private Crossover _crossover;
         private Selection _selection;
 
-        // public GeneticAlgorithm
-        // {
-        //     //_crossover = CrossoverPMX();
-        //     //_selection = Tournament();
+        public GenetcAlgorithmMain()
+        {
+            _crossover = new Crossover(CrossoverPMX);
+            _selection = new Selection(Tournament);
 
-        //     //_rateCrossover = ConfigurationGA.RateCrossover;
-        //     //_rateMutation = ConfigurationGA.RateMutation;
-        // }
+            _rateCrossover = ConfigurationGA.RateCrossover;
+            _rateMutation = ConfigurationGA.RateMutation;
+        }
 
         public Population ExecuteGA(Population population)
         {
@@ -162,7 +162,7 @@ namespace GeneticAlgorithm
                 int m1 = replacementOne[n1];
 
                 int n2 = parentTwo[i];
-                int m2 = replacementTwo[n1];
+                int m2 = replacementTwo[n2];
 
                 while(m1 != -1)
                 {
@@ -170,7 +170,7 @@ namespace GeneticAlgorithm
                     m1 = replacementOne[m1];
                 }
 
-                while(m1 != -1)
+                while(m2 != -1)
                 {
                     n2 = m2;
                     m2 = replacementOne[m2];
@@ -264,7 +264,7 @@ namespace GeneticAlgorithm
                     aux.CalcFitness();
                 }
             }
-            
+
             return aux;
         }
 

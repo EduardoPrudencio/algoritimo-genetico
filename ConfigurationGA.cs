@@ -15,12 +15,12 @@ namespace GeneticAlgorithm
         public static int SizeChomosome { get {return _sizeChomosome;} set {_sizeChomosome = value;} }
         public static int SizePopilation { get { return _sizePopilation;} set { _sizePopilation = value;}}
         public static Random Random { get => _rand;}
-        public static bool Elitism { get => _elitism; }
-        public static int SizeElitism { get => _sizeElitism;}
-        public static double RateCrossover { get => _rateCrossover;}
-        public static double RateMutation { get => _rateMutation;}
+        public static bool Elitism { get => _elitism; set {_elitism = value;}}
+        public static int SizeElitism { get => _sizeElitism; set {_sizeElitism = value;}}
+        public static double RateCrossover { get => _rateCrossover; set => _rateCrossover = value;}
+        public static double RateMutation { get => _rateMutation; set => _rateMutation = value;}
         public static int NumberOfCompetitors { get => _numberOfCompetitors; set{_numberOfCompetitors = value;}}
-        public static Mutation MutationType { get => _mutationType;}
+        public static Mutation MutationType { get => _mutationType; set {_mutationType = value;}}
     }
 
     public enum Mutation
